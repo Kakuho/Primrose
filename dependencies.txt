@@ -1,0 +1,35 @@
+List of Guaranteed Free Standing Libraries (up to C++20)
+
+General utilities 	Bit manipulation 	                  <bit>               (since C++20) 	All
+Language support 	  Other runtime support 	            <cstdarg> 	                        All
+Language support 	  Coroutines support 	                <coroutine>         (since C++20) 	All
+Language support 	  Comparisons 	                      <compare>           (since C++20) 	All
+Language support 	  Initializer lists 	                <initializer_list>  (since C++11) 	All
+Language support 	  Exception handling 	                <exception> 	                      All
+Language support 	  Source location 	                  <source_location>   (since C++20) 	All
+Language support 	  Type identification 	              <typeinfo> 	                        All
+Language support 	  Dynamic memory management           <new> 	                            All
+Language support 	  Integer types 	                    <cstdint>           (since C++11) 	All
+Language support 	  Implementation properties           <cfloat>
+                                                        <climits>           (since C++11)
+                                                        <limits>
+                                                        <version>           (since C++20) 	All
+Language support 	  Common definitions 	                <cstddef> 	                        All 
+Concepts 	          ----                                <concepts>          (since C++20) 	All
+Metaprogramming 	  Type traits 	                      <type_traits>       (since C++11) 	All
+
+//---------------------------------------------------------------/
+
+List of Guaranteed Free Standing Libraries (From c++23 to c++26):
+
+General utilities 	Tuples 	                            <tuple>             (since C++23) 	All
+General utilities 	Utility components 	                <utility>           (since C++23) 	All
+Language support 	  Debugging support 	                <debugging>         (since C++26) 	All
+Metaprogramming 	  Compile-time rational arithmetic  	<ratio>             (since C++23) 	All
+
+//---------------------------------------------------------------/
+
+GCC 13 provides more headers, such as <optional>, <span>, <array>, and <bitset>, for freestanding, although 
+these headers may not be portable or provide the same capabilities as a hosted implementation. 
+
+It is better to avoid using them in a freestanding environment, even if the toolchain provides them.
