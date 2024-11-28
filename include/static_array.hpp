@@ -19,38 +19,50 @@ struct StaticArray{
     //  Data Access
     //---------------------------------------------------------------//
 
-    [[nodiscard]] T& operator[](std::size_t index) noexcept{
+    [[nodiscard]] constexpr T& operator[](std::size_t index) noexcept{
       return m_buffer[index];
     }
 
-    [[nodiscard]] const T& operator[](std::size_t index) const noexcept{
+    [[nodiscard]] constexpr const T& operator[](std::size_t index) const noexcept{
       return m_buffer[index];
     }
 
-    [[nodiscard]] T& Front() noexcept{
+    [[nodiscard]] constexpr T& Front() noexcept{
       return m_buffer[0];
     }
 
-    [[nodiscard]] const T& Front() const noexcept{
+    [[nodiscard]] constexpr const T& Front() const noexcept{
       return m_buffer[0];
     }
 
-    [[nodiscard]] T& Back() noexcept{
+    [[nodiscard]] constexpr T& Back() noexcept{
       return m_buffer[N-1];
     }
 
-    [[nodiscard]] const T& Back() const noexcept{
+    [[nodiscard]] constexpr const T& Back() const noexcept{
       return m_buffer[N-1];
     }
 
-    [[nodiscard]] T* Data() const noexcept { return m_buffer; }
+    [[nodiscard]] constexpr T* Data() const noexcept { return m_buffer; }
 
     //---------------------------------------------------------------//
     //  Capacity
     //---------------------------------------------------------------//
 
-    [[nodiscard]] std::size_t Size() const noexcept { return N; }
+    [[nodiscard]] constexpr std::size_t Size() const noexcept { return N; }
 
+    // ------------------------------------------------------ //
+    //  Operator Overloads
+    // ------------------------------------------------------ //
+
+    [[nodiscard]] constexpr bool operator==(const StaticArray<T,N>& rhs){
+      for(std::size_t i = 0; i < N; i++){
+        if(m_buffer[i] != rhs[i]){
+          return false;
+        }
+      }
+      return true;
+    }
 };
 
 // helper functions

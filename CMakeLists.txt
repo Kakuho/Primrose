@@ -3,11 +3,13 @@ cmake_minimum_required(VERSION 3.1...3.29)
 project(Primrose VERSION 1.0 
                     LANGUAGES CXX)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 include_directories(include)
 
 set(CXX_SRCS 
-        include/StaticArray.hpp
-        include/StaticString.hpp
+        include/static_array.hpp
+        include/static_string.hpp
    )
 
 # unit tests
@@ -15,7 +17,7 @@ set(CXX_SRCS
 find_package(Catch2 3 REQUIRED)
 
 set(TEST_SRCS 
-      tests/StaticArray.cpp
+      tests/static_array.cpp
    )
 
 add_executable(tests ${TEST_SRCS} ${CXX_SRCS})
